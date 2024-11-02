@@ -48,3 +48,10 @@ function getRandomNumber(noOfRandomNumbers, startsFrom) {
 }
 
 console.log(getRandomNumber(3, 1));
+
+
+// Function to get computer choice
+    // Get a random integer number between 1 to 3
+    // If random number is 1 return "rock"
+    // If random number is 2 return "paper"
+    // If random number is 3 return "scissors"
