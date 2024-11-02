@@ -30,19 +30,15 @@ console.log(getRandomNumber());
 function getRandomNumber(noOfRandomNumbers, startsFrom) {
     // Get a random number between 0 and 1, where the 1 is not included
     let randomNumber = Math.random();
-    console.log(randomNumber);
 
     // Multiply it with the passed number of random numbers required parameter to get a random number between 0 and required random numbers, where the number of random numbers is not included
     randomNumber = randomNumber * noOfRandomNumbers;
-    console.log(randomNumber);
 
     // Round off the random number to its nearest lowest integer value to get a random integer value between 0 to number of random numbers, where number of random numbers is not included
     randomNumber = Math.floor(randomNumber);
-    console.log(randomNumber);
 
     // To start the random number from a different number than 0 since we rounded it down, we will add the passed to start from required parameter to the above random integer value
     randomNumber = randomNumber + startsFrom;
-    console.log(randomNumber);
 
     return randomNumber;
 }
@@ -54,7 +50,6 @@ console.log(getRandomNumber(3, 1));
 function getComputerChoice() {
     // Get a random integer number between 1 to 3
     const randomNumber = getRandomNumber(3, 1);
-    console.log(randomNumber);
 
     // If random number is 1 return "rock"
     if(randomNumber === 1) {
@@ -71,4 +66,5 @@ function getComputerChoice() {
         return "scissors"
     }
 }
+
 console.log(getComputerChoice());
