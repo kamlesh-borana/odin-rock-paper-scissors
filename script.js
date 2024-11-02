@@ -79,3 +79,6 @@ function getHumanChoice() {
 
 // Print the user's choice to console
 console.log(getHumanChoice());
+
+let humanScore = 0;
+let computerScore = 0;
