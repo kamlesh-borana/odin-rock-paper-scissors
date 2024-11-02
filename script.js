@@ -1,3 +1,4 @@
+/*
 // Function to get random number
 function getRandomNumber() {
     // Get a random number between 0 and 1
@@ -22,3 +23,10 @@ function getRandomNumber() {
 }
 
 console.log(getRandomNumber());
+*/
+
+// Function to get random number
+    // Get a random number between 0 and 1, where the 1 is not included
+    // Multiply it with the number of random numbers required to get a random number between 0 and required random numbers, where the number of random numbers is not included
+    // Round off the random number to its nearest lowest integer value to get a random integer value between 0 to number of random numbers, where number of random numbers is not included
+    // To start the random number from a different number than 0 since we rounded it down, we will add that number to the above random integer value
