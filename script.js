@@ -67,7 +67,7 @@ function getComputerChoice() {
     }
 }
 
-console.log(getComputerChoice());
+// console.log(getComputerChoice());
 
 
 // Function to get user's choice
@@ -78,7 +78,7 @@ function getHumanChoice() {
 }
 
 // Print the user's choice to console
-console.log(getHumanChoice());
+// console.log(getHumanChoice());
 
 let humanScore = 0;
 let computerScore = 0;
