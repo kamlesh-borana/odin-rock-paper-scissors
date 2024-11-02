@@ -72,9 +72,11 @@ function getComputerChoice() {
 
 // Function to get user's choice
 function getHumanChoice() {
-    // Ask the user for his choice and store his choice in a variable
-    const userChoice = prompt("Enter your choice below");
-    return userChoice;
+    // Ask the user for his choice and store his choice in a variable, also set empty string as default value when no input provided
+    const userChoice = prompt("Enter your choice below") || "";
+
+    // Convert the user choice to lowercase and return it
+    return userChoice.toLowerCase();
 }
 
 // Print the user's choice to console
