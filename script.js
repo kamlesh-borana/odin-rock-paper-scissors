@@ -51,7 +51,24 @@ console.log(getRandomNumber(3, 1));
 
 
 // Function to get computer choice
+function getComputerChoice() {
     // Get a random integer number between 1 to 3
+    const randomNumber = getRandomNumber(3, 1);
+    console.log(randomNumber);
+
     // If random number is 1 return "rock"
+    if(randomNumber === 1) {
+        return "rock"
+    }
+
     // If random number is 2 return "paper"
+    else if(randomNumber === 2) {
+        return "paper"
+    }
+
     // If random number is 3 return "scissors"
+    else {
+        return "scissors"
+    }
+}
+console.log(getComputerChoice());
