@@ -82,3 +82,10 @@ function getHumanChoice() {
 
 let humanScore = 0;
 let computerScore = 0;
+
+let humanChoice = getHumanChoice();
+let computerChoice = getComputerChoice();
+
+console.log("User Choice: ", humanChoice);
+console.log("Computer Choice: ", computerChoice);
+
