@@ -43,7 +43,7 @@ function getRandomNumber(noOfRandomNumbers, startsFrom) {
     return randomNumber;
 }
 
-console.log(getRandomNumber(3, 1));
+// console.log(getRandomNumber(3, 1));
 
 
 // Function to get computer choice
@@ -68,3 +68,14 @@ function getComputerChoice() {
 }
 
 console.log(getComputerChoice());
+
+
+// Function to get user's choice
+function getHumanChoice() {
+    // Ask the user for his choice and store his choice in a variable
+    const userChoice = prompt("Enter your choice below");
+    return userChoice;
+}
+
+// Print the user's choice to console
+console.log(getHumanChoice());
