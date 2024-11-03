@@ -65,11 +65,15 @@ function playGame() {
     }
 
 
-    humanChoice = getHumanChoice();
-    computerChoice = getComputerChoice();
-
-    console.log("User Choice: ", humanChoice);
-    console.log("Computer Choice: ", computerChoice);
+    // Function to set players choices
+    function setPlayersChoices() {
+        
+        computerChoice = getComputerChoice();
+        humanChoice = getHumanChoice();
+        
+        console.log("User Choice: ", humanChoice);
+        console.log("Computer Choice: ", computerChoice);
+    }
 
 
     // Function to check if the player's choice is valid or not
@@ -184,7 +188,15 @@ function playGame() {
     }
 
 
-    playRound(humanChoice, computerChoice);    
+    setPlayersChoices();
+    playRound(humanChoice, computerChoice);
+
+    setPlayersChoices();
+    playRound(humanChoice, computerChoice);
+
+    setPlayersChoices();
+    playRound(humanChoice, computerChoice);
+
 }
 
 
