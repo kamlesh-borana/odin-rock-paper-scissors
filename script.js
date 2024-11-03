@@ -150,12 +150,42 @@ function getResult(humanChoice, computerChoice) {
 }
 
 
+// Function to capitalise text
+function capitalise(text) {
+    return text.at(0).toUpperCase() + text.slice(1);
+}
+
+
+// Function to show result statement for the round
+function showResult(result, humanChoice, computerChoice) {
+    // If result is "tie" print tie statement
+    if(result === "tie") {
+        console.log(`It's a tie! You both chose ${capitalise(humanChoice)}`);
+    }
+    // If result is "win" print win statement
+    else if(result === "win") {
+        console.log(`You won! ${capitalise(humanChoice)} beats ${capitalise(computerChoice)}`);
+    }
+    // If result is "lose" print lose statement
+    else if(result === "lose") {
+        console.log(`You lose! ${capitalise(computerChoice)} beats ${capitalise(humanChoice)}`);
+    }
+    // Else print invalid choice
+    else {
+        console.log("Invalid choice");
+    }
+}
+
+
 // Function to play the round
 function playRound(humanChoice, computerChoice) {
     
     // Get the result for the round
     const result = getResult(humanChoice, computerChoice);
     console.log(result);
+
+    // Print the result statement for the round
+    showResult(result, humanChoice, computerChoice);
 
 }
 
