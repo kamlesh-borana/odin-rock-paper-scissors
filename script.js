@@ -210,17 +210,34 @@ function playGame() {
     }
 
 
-    startRound();
-    playRound(humanChoice, computerChoice);
-    endRound();
+    // Function to run the game round
+    function gameRound() {
 
-    startRound();
-    playRound(humanChoice, computerChoice);
-    endRound();
+        // Start the round and set player choices
+        startRound();
 
-    startRound();
-    playRound(humanChoice, computerChoice);
-    endRound();
+        // Play the round
+        playRound(humanChoice, computerChoice);
+
+        // End round and increment it by 1
+        endRound();
+    }
+
+
+    // Round 1
+    gameRound();
+
+    // Round 2
+    gameRound();
+
+    // Round 3
+    gameRound();
+
+    // Round 4
+    gameRound();
+
+    // Round 5
+    gameRound();
 }
 
 
