@@ -15,8 +15,6 @@ function getRandomNumber(noOfRandomNumbers, startsFrom) {
     return randomNumber;
 }
 
-// console.log(getRandomNumber(3, 1));
-
 
 // Function to get computer choice
 function getComputerChoice() {
@@ -39,8 +37,6 @@ function getComputerChoice() {
     }
 }
 
-// console.log(getComputerChoice());
-
 
 // Function to get user's choice
 function getHumanChoice() {
@@ -51,8 +47,6 @@ function getHumanChoice() {
     return userChoice.toLowerCase();
 }
 
-// Print the user's choice to console
-// console.log(getHumanChoice());
 
 let humanScore = 0;
 let computerScore = 0;
