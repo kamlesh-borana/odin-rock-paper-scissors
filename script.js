@@ -205,4 +205,8 @@ function playRound(humanChoice, computerChoice) {
     updateScore(result);
 }
 
-playRound(humanChoice, computerChoice);
+
+// If the user and computer choices are present then play the round
+if(humanChoice && computerChoice) {
+    playRound(humanChoice, computerChoice);
+}
