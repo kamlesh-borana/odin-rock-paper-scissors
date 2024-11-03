@@ -72,8 +72,22 @@ function playGame() {
     console.log("Computer Choice: ", computerChoice);
 
 
+    // Function to check if the player's choice is valid or not
+    function isPlayerChoiceValid(playerChoice) {
+        if(playerChoice === "rock" || playerChoice === "paper" || playerChoice === "scissors") {
+            return true;
+        }
+        return false;
+    }
+
+
     // Function to get the result of the round
     function getResult(humanChoice, computerChoice) {
+
+        // Check if any of the player's choice is invalid or not if yes then return "invalid choice"
+        if(!isPlayerChoiceValid(humanChoice) || !isPlayerChoiceValid(computerChoice)) {
+            return "Invalid choice";
+        }
 
         // Check if user and computer choices are the same, if same then return "tie" as result
         if(humanChoice === computerChoice) {
@@ -91,9 +105,6 @@ function playGame() {
                 else if(computerChoice === "paper") {
                     return "lose";
                 }
-                else {
-                    return "Invalid choice";
-                }
 
             case "paper":
                 // If user chose "paper" and computer chose "rock" then return "win"
@@ -104,10 +115,6 @@ function playGame() {
                 else if(computerChoice === "scissors") {
                     return "lose";
                 }
-                // Else return "invalid choice"
-                else {
-                    return "Invalid choice";
-                }
 
             case "scissors":
                 // If user chose "scissors" and computer chose "paper" then return "win"
@@ -117,10 +124,6 @@ function playGame() {
                 // If user chose "scissors" and computer chose "rock" then return "lose"
                 else if(computerChoice === "rock") {
                     return "lose";
-                }
-                // Else return "invalid choice"
-                else {
-                    return "Invalid choice";
                 }
 
             default:
@@ -144,9 +147,9 @@ function playGame() {
         else if(result === "lose") {
             console.log(`You lose! ${capitalise(computerChoice)} beats ${capitalise(humanChoice)}`);
         }
-        // Else print invalid choice
+        // Else print invalid choice and round skipped message
         else {
-            console.log("Invalid choice");
+            console.log("Invalid choice, round skipped");
         }
     }
 
@@ -161,13 +164,14 @@ function playGame() {
         else if(result === "lose") {
             computerScore = computerScore + 1;
         }
+        
         console.log(humanScore, "||" ,computerScore);
     }
 
 
     // Function to play the round
     function playRound(humanChoice, computerChoice) {
-        
+
         // Get the result for the round
         const result = getResult(humanChoice, computerChoice);
         console.log(result);
@@ -180,7 +184,7 @@ function playGame() {
     }
 
 
-        playRound(humanChoice, computerChoice);
+    playRound(humanChoice, computerChoice);    
 }
 
 
