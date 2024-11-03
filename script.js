@@ -180,10 +180,7 @@ function playGame() {
     }
 
 
-    // If the user and computer choices are present then play the round
-    if(humanChoice && computerChoice) {
         playRound(humanChoice, computerChoice);
-    }
 }
 
 
