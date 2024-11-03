@@ -177,6 +177,20 @@ function showResult(result, humanChoice, computerChoice) {
 }
 
 
+// Function to update score after the round
+function updateScore(result) {
+    // If result is "win" increment user's score by 1
+    if(result === "win") {
+        humanScore = humanScore + 1;
+    }
+    // If result is "lose" increment computer's score by 1
+    else if(result === "lose") {
+        computerScore = computerScore + 1;
+    }
+    console.log(humanScore, "||" ,computerScore);
+}
+
+
 // Function to play the round
 function playRound(humanChoice, computerChoice) {
     
@@ -187,6 +201,8 @@ function playRound(humanChoice, computerChoice) {
     // Print the result statement for the round
     showResult(result, humanChoice, computerChoice);
 
+    // Update score based on result
+    updateScore(result);
 }
 
 playRound(humanChoice, computerChoice);
