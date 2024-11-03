@@ -91,3 +91,72 @@ let computerChoice = getComputerChoice();
 console.log("User Choice: ", humanChoice);
 console.log("Computer Choice: ", computerChoice);
 
+
+// Function to get the result of the round
+function getResult(humanChoice, computerChoice) {
+
+    // Check if user and computer choices are the same, if same then return "tie" as result
+    if(humanChoice === computerChoice) {
+        return "tie";
+    }
+
+    // Winner deciding switch case logic for the round based on both players choices
+    switch(humanChoice) {
+        case "rock":
+            // If user chose "rock" and computer chose "scissors" then return "win"
+            if(computerChoice === "scissors") {
+                return "win";
+            }
+            // If user chose "rock" and computer chose "paper" then return "lose"
+            else if(computerChoice === "paper") {
+                return "lose";
+            }
+            else {
+                return "Invalid choice";
+            }
+
+        case "paper":
+            // If user chose "paper" and computer chose "rock" then return "win"
+            if(computerChoice === "rock") {
+                return "win";
+            }
+            // If user chose "paper" and computer chose "scissors" then return "lose"
+            else if(computerChoice === "scissors") {
+                return "lose";
+            }
+            // Else return "invalid choice"
+            else {
+                return "Invalid choice";
+            }
+
+        case "scissors":
+            // If user chose "scissors" and computer chose "paper" then return "win"
+            if(computerChoice === "paper") {
+                return "win";
+            }
+            // If user chose "scissors" and computer chose "rock" then return "lose"
+            else if(computerChoice === "rock") {
+                return "lose";
+            }
+            // Else return "invalid choice"
+            else {
+                return "Invalid choice";
+            }
+
+        default:
+            // Else return "invalid choice"
+            return "Invalid choice";
+    }
+}
+
+
+// Function to play the round
+function playRound(humanChoice, computerChoice) {
+    
+    // Get the result for the round
+    const result = getResult(humanChoice, computerChoice);
+    console.log(result);
+
+}
+
+playRound(humanChoice, computerChoice);
