@@ -190,13 +190,15 @@ function playGame() {
 
     setPlayersChoices();
     playRound(humanChoice, computerChoice);
+    round++;
 
     setPlayersChoices();
     playRound(humanChoice, computerChoice);
+    round++;
 
     setPlayersChoices();
     playRound(humanChoice, computerChoice);
-
+    round++;
 }
 
 
