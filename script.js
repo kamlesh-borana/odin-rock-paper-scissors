@@ -224,6 +224,27 @@ function playGame() {
     }
 
 
+    // Function to show game result
+    function showGameResult(humanScore, computerScore) {
+        
+        // Display game result score after all rounds
+        console.log(`Final Scores:\nYou: ${humanScore}  Computer: ${computerScore}`);
+        
+        // If user wins the game
+        if(humanScore > computerScore) {
+            console.log(`Congratulations! You won the game with a lead of ${humanScore - computerScore} points.`);
+        }
+        // If computer wins the game
+        else if(computerScore > humanScore) {
+            console.log(`You fell short by ${computerScore - humanScore} points. Try again!`)
+        }
+        // If the game result is a tie
+        else {
+            console.log("No one takes the crown – the game is a draw.");
+        }
+    }
+
+
     // Round 1
     gameRound();
 
@@ -238,6 +259,9 @@ function playGame() {
 
     // Round 5
     gameRound();
+
+    // Show game result message
+    showGameResult(humanScore, computerScore);
 }
 
 
