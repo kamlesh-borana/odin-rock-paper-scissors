@@ -188,17 +188,39 @@ function playGame() {
     }
 
 
-    setPlayersChoices();
-    playRound(humanChoice, computerChoice);
-    round++;
+    // Function to start a round and set player choices 
+    function startRound() {
+        
+        // Print the start of the current round no
+        console.log(`Round ${round} Begins`);
 
-    setPlayersChoices();
-    playRound(humanChoice, computerChoice);
-    round++;
+        // Set both players choices
+        setPlayersChoices();
+    }
 
-    setPlayersChoices();
+
+    // Function to end a round
+    function endRound() {
+
+        // Print the end of current round no
+        console.log(`Round ${round} Ends`);
+
+        // Increment the current round by 1
+        round++;
+    }
+
+
+    startRound();
     playRound(humanChoice, computerChoice);
-    round++;
+    endRound();
+
+    startRound();
+    playRound(humanChoice, computerChoice);
+    endRound();
+
+    startRound();
+    playRound(humanChoice, computerChoice);
+    endRound();
 }
 
 
