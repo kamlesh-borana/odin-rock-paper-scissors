@@ -31,6 +31,7 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0;
     let round = 1;
+    let hasGameEnded = false;
 
     const resultDiv = document.querySelector(".result");
     const userScorePara = document.querySelector(".scores .user");
@@ -239,12 +240,21 @@ function playGame() {
                 gameResultPara.textContent = `You fell short by ${computerScore - humanScore} points. Try again!`;
             }
             resultDiv.appendChild(gameResultPara);
+
+            hasGameEnded = true;
         }
     }
 
 
     // Function to run the game round
     function gameRound() {
+
+        if(hasGameEnded) {
+            humanScore = 0;
+            computerScore = 0;
+            round = 1;
+            hasGameEnded = false;
+        }
 
         // Start the round and set player choices
         startRound();
