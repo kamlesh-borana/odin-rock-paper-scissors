@@ -33,6 +33,8 @@ function playGame() {
     let round = 1;
 
     const resultDiv = document.querySelector(".result");
+    const userScorePara = document.querySelector(".scores .user");
+    const computerScorePara = document.querySelector(".scores .computer");
 
     // Function to get computer choice
     function getComputerChoice() {
@@ -183,6 +185,8 @@ function playGame() {
         }
         
         // console.log(humanScore, "||" ,computerScore);
+        userScorePara.textContent = `User: ${humanScore}`;
+        computerScorePara.textContent = `Computer: ${computerScore}`;
     }
 
 
