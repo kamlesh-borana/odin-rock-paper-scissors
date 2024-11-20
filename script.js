@@ -230,6 +230,16 @@ function playGame() {
 
         // Increment the current round by 1
         round++;
+
+        if(humanScore >= 5 || computerScore >= 5) {
+            const gameResultPara = document.createElement("p");
+            if(humanScore >= 5) {
+                gameResultPara.textContent = `Congratulations! You won the game with a lead of ${humanScore - computerScore} points.`;
+            } else {
+                gameResultPara.textContent = `You fell short by ${computerScore - humanScore} points. Try again!`;
+            }
+            resultDiv.appendChild(gameResultPara);
+        }
     }
 
 
