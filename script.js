@@ -69,7 +69,7 @@ function playGame() {
     function setPlayersChoices() {
         
         computerChoice = getComputerChoice();
-        humanChoice = getHumanChoice();
+        // humanChoice = getHumanChoice();
         
         console.log("User Choice: ", humanChoice);
         console.log("Computer Choice: ", computerChoice);
@@ -261,7 +261,15 @@ function playGame() {
     // gameRound();
 
     // Show game result message
-    showGameResult(humanScore, computerScore);
+    // showGameResult(humanScore, computerScore);
+
+    const optionButtons = document.querySelectorAll("button");
+    optionButtons.forEach((option) => {
+        option.addEventListener("click", (event) => {
+            humanChoice = event.target.textContent.toLowerCase();
+            gameRound();
+        });
+    });
 }
 
 
