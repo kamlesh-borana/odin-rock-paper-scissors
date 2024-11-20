@@ -32,6 +32,7 @@ function playGame() {
     let computerScore = 0;
     let round = 1;
 
+    const resultDiv = document.querySelector(".result");
 
     // Function to get computer choice
     function getComputerChoice() {
@@ -71,8 +72,14 @@ function playGame() {
         computerChoice = getComputerChoice();
         // humanChoice = getHumanChoice();
         
-        console.log("User Choice: ", humanChoice);
-        console.log("Computer Choice: ", computerChoice);
+        // console.log("User Choice: ", humanChoice);
+        const userChoicePara = document.createElement("p");
+        userChoicePara.textContent = `User Choice: ${humanChoice}`;
+        resultDiv.appendChild(userChoicePara);
+        // console.log("Computer Choice: ", computerChoice);
+        const computerChoicePara = document.createElement("p");
+        computerChoicePara.textContent = `Computer Choice: ${computerChoice}`;
+        resultDiv.appendChild(computerChoicePara);
     }
 
 
@@ -139,22 +146,28 @@ function playGame() {
 
     // Function to show result statement for the round
     function showResult(result, humanChoice, computerChoice) {
+        const resultPara = document.createElement("p");
         // If result is "tie" print tie statement
         if(result === "tie") {
-            console.log(`It's a tie! You both chose ${capitalise(humanChoice)}`);
+            // console.log(`It's a tie! You both chose ${capitalise(humanChoice)}`);
+            resultPara.textContent = `It's a tie! You both chose ${capitalise(humanChoice)}`;
         }
         // If result is "win" print win statement
         else if(result === "win") {
-            console.log(`You won! ${capitalise(humanChoice)} beats ${capitalise(computerChoice)}`);
+            // console.log(`You won! ${capitalise(humanChoice)} beats ${capitalise(computerChoice)}`);
+            resultPara.textContent = `You won! ${capitalise(humanChoice)} beats ${capitalise(computerChoice)}`;
         }
         // If result is "lose" print lose statement
         else if(result === "lose") {
-            console.log(`You lose! ${capitalise(computerChoice)} beats ${capitalise(humanChoice)}`);
+            // console.log(`You lose! ${capitalise(computerChoice)} beats ${capitalise(humanChoice)}`);
+            resultPara.textContent = `You lose! ${capitalise(computerChoice)} beats ${capitalise(humanChoice)}`;
         }
         // Else print invalid choice and round skipped message
         else {
-            console.log("Invalid choice, round skipped");
+            // console.log("Invalid choice, round skipped");
+            resultPara.textContent = "Invalid choice, round skipped";
         }
+        resultDiv.appendChild(resultPara);
     }
 
 
@@ -169,7 +182,7 @@ function playGame() {
             computerScore = computerScore + 1;
         }
         
-        console.log(humanScore, "||" ,computerScore);
+        // console.log(humanScore, "||" ,computerScore);
     }
 
 
@@ -178,7 +191,7 @@ function playGame() {
 
         // Get the result for the round
         const result = getResult(humanChoice, computerChoice);
-        console.log(result);
+        // console.log(result);
 
         // Print the result statement for the round
         showResult(result, humanChoice, computerChoice);
@@ -192,7 +205,10 @@ function playGame() {
     function startRound() {
         
         // Print the start of the current round no
-        console.log(`Round ${round} Begins`);
+        // console.log(`Round ${round} Begins`);
+        const roundBeginPara = document.createElement("p");
+        roundBeginPara.textContent = `Round ${round} Begins`;
+        resultDiv.appendChild(roundBeginPara);
 
         // Set both players choices
         setPlayersChoices();
@@ -203,7 +219,10 @@ function playGame() {
     function endRound() {
 
         // Print the end of current round no
-        console.log(`Round ${round} Ends`);
+        // console.log(`Round ${round} Ends`);
+        const roundEndPara = document.createElement("p");
+        roundEndPara.textContent = `Round ${round} Ends`;
+        resultDiv.appendChild(roundEndPara);
 
         // Increment the current round by 1
         round++;
@@ -266,6 +285,8 @@ function playGame() {
     const optionButtons = document.querySelectorAll("button");
     optionButtons.forEach((option) => {
         option.addEventListener("click", (event) => {
+            resultDiv.textContent = "";
+
             humanChoice = event.target.textContent.toLowerCase();
             gameRound();
         });
