@@ -246,19 +246,19 @@ function playGame() {
 
 
     // Round 1
-    gameRound();
+    // gameRound();
 
     // Round 2
-    gameRound();
+    // gameRound();
 
     // Round 3
-    gameRound();
+    // gameRound();
 
     // Round 4
-    gameRound();
+    // gameRound();
 
     // Round 5
-    gameRound();
+    // gameRound();
 
     // Show game result message
     showGameResult(humanScore, computerScore);
