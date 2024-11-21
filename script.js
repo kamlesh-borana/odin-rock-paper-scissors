@@ -239,6 +239,8 @@ function playGame() {
             } else {
                 gameResultPara.textContent = `You fell short by ${computerScore - humanScore} points. Try again!`;
             }
+            gameResultPara.style.fontWeight = "bold";
+            gameResultPara.style.fontSize = "20px";
             resultDiv.appendChild(gameResultPara);
 
             hasGameEnded = true;
